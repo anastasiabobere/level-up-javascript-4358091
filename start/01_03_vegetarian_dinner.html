@@ -10,7 +10,7 @@
 
 <body>
   <!-- To run this file right click the file in the navigation bar and select "Open with live server. Then open the developer tools in the browser and head to the console window."-->
-
+<h1>Hallo</h1>
   <!-- Use this element to render your menu -->
   <ul id="menu"></ul>
 
@@ -34,7 +34,14 @@
       }
     ]
     // Write your code here
-
+    const vegetarian = menu.filter(option => option.isVegetarian)
+      
+     vegetarian.forEach(option => {
+      let dish=  document.createElement("li")
+      dish.textContent = option.name
+      const menu= document.querySelector("#menu")
+      menu.append(dish)
+     });
   </script>
 </body>
 
