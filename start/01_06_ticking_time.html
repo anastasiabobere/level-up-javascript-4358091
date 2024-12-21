@@ -6,6 +6,17 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Ticking Time</title>
+  <style>
+    body{
+      background: radial-gradient(circle, rgba(63,94,251,1) 0%, rgba(252,70,107,1) 100%);
+    }
+    #clock{
+      color: white;
+      text-align: center;
+      margin-top: 20rem;
+      font-size: 5rem;
+    }
+  </style>
 </head>
 
 <body>
@@ -15,8 +26,17 @@
   <div id="clock"></div>
 
   <script>
+  
     // Write your code here
-    
+    function clock(){
+      const clockNode= document.querySelector("#clock")
+      return setInterval(()=>{
+        let date = new Date();
+        let tick = date.toLocaleTimeString();
+        clockNode.textContent = tick;
+      }, 1000)
+    }
+    clock();
   </script>
 </body>
 
