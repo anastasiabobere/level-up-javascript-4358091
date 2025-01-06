@@ -16,6 +16,25 @@
 
   <script>
     // Write your code here
+    function* getStop() {
+        yield "Poughkeepsie";
+        yield "Newburgh";
+        yield "Peekskill";
+        yield "Yonkers";
+        yield "Bronx";
+        yield "Grand Central";
+      }
+    const nycTrainline = getStop();
+    const btn = document.querySelector("#next-stop")
+    btn.addEventListener("click",()=>{
+      let currStop= nycTrainline.next()
+      if(currStop.done){
+        console.log("We made it")
+        btn.setAttribute("disabled", true)
+      }else{
+        console.log(`This station ${currStop.value}`)
+      }
+    })
 
   </script>
 </body>
