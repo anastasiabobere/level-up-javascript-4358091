@@ -16,7 +16,20 @@
 
   <script>
     // Write your code here
-
+    let v1 = ["pizza", "lobster"]
+    let v2 = ["pizza", "orange"]
+    let v3 = ["cakes", "lobster"]
+    let menus = [v1, v2,v3]
+    flatMenus = menus.flat()
+    const newMenu = new Set()
+    flatMenus.forEach(item => newMenu.add(item));
+    const menuNode = document.querySelector('#combined-menu');
+    for (let item of newMenu){
+      let food = document.createElement("li")
+      food.innerText=item
+      menuNode.append(food)
+    }
+    console.log(newMenu)
   </script>
 </body>
 
